@@ -1,0 +1,123 @@
+:root{
+  --ink:#203c30;--forest:#173e30;--green:#246b48;--green-2:#347b50;
+  --mint:#dcebd3;--mint-2:#e8f0e3;--bg:#f3f6ef;--card:#fff;--line:#e0e7dc;
+  --muted:#566b5f;--gold:#f2b544;--bad:#b3402f;--bad-bg:#fbe9e5;--ok-bg:#dff1e4;
+  --r:18px;--shadow:0 1px 2px rgba(23,62,48,.06),0 6px 18px rgba(23,62,48,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+h1,h2,h3{line-height:1.2}
+h1{font-size:clamp(28px,5vw,40px);margin:.2em 0 .4em}
+h2{margin:32px 0 14px;font-size:24px}
+h3{margin:.4em 0;font-size:18px}
+p{margin:.4em 0}
+small{color:var(--muted)}
+.muted{color:var(--muted)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:8px}
+#view:focus{outline:none}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;border-radius:8px;z-index:20}
+.skip:focus{left:8px}
+
+/* шапка */
+.top{background:var(--forest);color:#fff;position:sticky;top:0;z-index:10}
+.top-in{max-width:1100px;margin:auto;padding:14px 24px;display:flex;align-items:center;gap:14px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:24px}
+.tagline{color:#c9e4d2;margin-right:auto}
+.chip{background:#2c5a47;border:1px solid #3d7258;border-radius:999px;padding:6px 14px;font-weight:700;white-space:nowrap;font-size:15px}
+
+main{max-width:1100px;margin:auto;padding:24px}
+
+/* навигация */
+nav{display:flex;gap:8px;margin-bottom:24px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+nav a{flex:none;padding:10px 16px;border-radius:12px;background:#fff;color:#234b36;text-decoration:none;border:1px solid var(--line);font-weight:500}
+nav a:hover{background:var(--mint-2)}
+nav a.active{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* кнопки */
+button,.btn{border:0;border-radius:12px;padding:12px 18px;background:var(--green);color:#fff;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s,transform .1s}
+button:hover:not(:disabled),.btn:hover{background:var(--forest)}
+button:active:not(:disabled){transform:scale(.98)}
+button:disabled{background:#dce5da;color:#5d7066;cursor:default}
+button.ghost{background:transparent;color:var(--green);border:2px solid var(--green)}
+button.ghost:hover:not(:disabled){background:var(--mint-2)}
+button.danger{background:var(--bad)}
+
+/* hero */
+.hero{background:var(--mint);border-radius:24px;padding:32px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.hero>div:first-child{flex:1 1 340px}
+.hero .btn,.hero button{margin-top:10px}
+.hero-score{flex:0 1 300px;background:#fff;border-radius:20px;padding:20px 22px;box-shadow:var(--shadow)}
+.balance{font-size:48px;font-weight:800;line-height:1.1}
+.level{font-weight:700;color:var(--green)}
+.bar{height:14px;background:#e4ece0;border-radius:99px;overflow:hidden;margin:10px 0 6px}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--green-2),#79b36a);border-radius:99px;transition:width .5s}
+
+/* сетки и карточки */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border-radius:var(--r);padding:20px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.card h3{margin-top:4px}
+.card .ico{font-size:34px;line-height:1}
+.card .num{font-size:36px;font-weight:800;margin:4px 0}
+.card.done{background:var(--ok-bg);border-color:#bfe0c8}
+.card.next{border:2px solid var(--green)}
+.tag{display:inline-block;background:var(--mint);color:#1f5c3c;font-weight:700;border-radius:99px;padding:2px 12px;font-size:14px;margin:4px 0 8px}
+.card button{margin-top:10px}
+.card.locked .ico{opacity:.3;filter:grayscale(1)}
+
+/* фильтры */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.filters button{background:#fff;color:#234b36;border:1px solid var(--line);padding:8px 14px}
+.filters button[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* рейтинг */
+.line{display:flex;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid #e6ece4}
+.line:last-child{border:0}
+.line.me{background:var(--mint-2);margin:0 -20px;padding:14px 20px;font-weight:700}
+
+/* тест */
+.quiz{margin-bottom:14px}
+.quiz button{display:block;width:100%;margin:8px 0 0;background:var(--mint-2);color:var(--ink);text-align:left;font-weight:500}
+.quiz button:hover:not(:disabled){background:#d6e6cf}
+.quiz button[aria-pressed=true]{background:var(--green);color:#fff}
+.quiz.ok{border-color:#9fd2ac}
+.quiz.bad{border-color:#e4a79c}
+.quiz .why{margin-top:12px;padding:10px 14px;border-radius:12px;background:var(--bad-bg);font-size:15px}
+.quiz.ok .why{background:var(--ok-bg)}
+.result{border-radius:var(--r);padding:20px;margin:0 0 18px;font-weight:600}
+.result.pass{background:var(--ok-bg)}
+.result.fail{background:var(--bad-bg)}
+
+/* игра «сортировка» */
+.game{text-align:center}
+.game .item{font-size:72px;line-height:1.1;margin:6px 0}
+.game .item-name{font-size:20px;font-weight:700;margin-bottom:14px}
+.bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:12px}
+.bins button{background:var(--mint-2);color:var(--ink);padding:14px 10px}
+.bins button:hover:not(:disabled){background:#d6e6cf}
+.feedback{min-height:48px;margin-top:14px;font-weight:600}
+.feedback.good{color:#1f6b3b}
+.feedback.wrong{color:var(--bad)}
+
+/* форма */
+label{display:block;font-weight:600;margin:14px 0 6px}
+input{padding:12px;border:1px solid #b5c8b9;border-radius:10px;font:inherit;width:100%;max-width:420px;background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:var(--forest);color:#fff;padding:12px 20px;border-radius:14px;opacity:0;pointer-events:none;transition:.3s;z-index:30;max-width:calc(100% - 32px);text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+footer{padding:28px 24px 40px;text-align:center;color:var(--muted);font-size:14px}
+
+@media(max-width:600px){
+  .top-in{padding:12px 16px;flex-wrap:wrap;gap:8px}
+  .tagline{display:none}
+  .brand{margin-right:auto}
+  main{padding:16px}
+  .hero{padding:20px}
+  .balance{font-size:40px}
+  .grid{grid-template-columns:1fr}
+  h2{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

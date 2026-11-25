@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ЭкоБаллы — копи баллы за экологичные действия</title>
+  <meta name="description" content="Студенческая инициатива из Санкт-Петербурга: выполняй экологические задания, проходи экотест, копи виртуальные баллы и открывай достижения.">
+  <meta name="theme-color" content="#173e30">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ЭкоБаллы">
+  <meta property="og:description" content="Маленькие действия — большие перемены. Экологические задания, тест и достижения для студентов.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#view">К содержимому</a>
+
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="#/home"><span aria-hidden="true">🌿</span> ЭкоБаллы</a>
+      <small class="tagline">Студенческая инициатива · СПб</small>
+      <div class="chip" id="chip" aria-live="polite">0 ЭБ</div>
+    </div>
+  </header>
+
+  <main>
+    <nav id="nav" aria-label="Разделы сайта"></nav>
+
+    <section id="view" tabindex="-1">
+      <!-- Запасной вариант, если JavaScript отключён -->
+      <div class="hero">
+        <div>
+          <small>Маленькие действия — большие перемены</small>
+          <h1>Твой вклад в чистый город</h1>
+          <p>Выполняй экологические задания, копи баллы и открывай достижения.</p>
+        </div>
+      </div>
+      <h2>Экологические задания</h2>
+      <div class="grid">
+        <div class="card"><h3>Сдать пластик</h3><p>+20 ЭБ</p></div>
+        <div class="card"><h3>Сдать макулатуру</h3><p>+30 ЭБ</p></div>
+        <div class="card"><h3>Участие в субботнике</h3><p>+100 ЭБ</p></div>
+      </div>
+      <p class="muted">Для интерактивных функций включите JavaScript в браузере.</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer>
+    Учебный прототип · 0 ₽ · Баллы виртуальные, действия подтверждаются самостоятельно.<br>
+    Прогресс хранится только в вашем браузере.
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
